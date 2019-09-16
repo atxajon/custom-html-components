@@ -1,3 +1,4 @@
+import './news-article.js';
 import {topHeadlinesUrl} from './newsApi.js';
 
 // By delaying this until the page is loaded the experience is more smooth. Do not block initial render with js.
@@ -11,7 +12,7 @@ async function fetchNews() {
   const main = document.querySelector('main');
   json.articles.forEach(article => {
     const el = document.createElement('news-article');
-    el.article = article;
+    el.pulledArticle = article;
     main.appendChild(el);
   });
 }
